@@ -2,16 +2,21 @@
 <head>
     <title>Tennis Game</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-
+        <div id="logo">
+            <h1>JavaScript Tennis</h1>
+        </div>
+        <div id='play-div'>
+            <button id="play">Play</button>
+            <button id="quit">Quit</button>
+        </div>
+        <div id = "scores">
+            <h3 id="score1">Player 1: 0</h3>
+            <h3 id="score2">Player 2: 0</h3>
+        </div>
     </header>
-    <div id="logo">
-        <h1>Tennis in JS</h1>
-    </div>
-    <div id="container">
-
-    </div>
+    <canvas id="canvas" width="1000" height="555"></canvas>
 </body>

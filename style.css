@@ -1,6 +1,8 @@
 html {
     margin: 0;
     padding: 0;
+    background-color: #828282;
+    font-family: "Josefin Sans","Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 }
 
 body {
@@ -10,4 +12,55 @@ body {
     height: 100vh;
     align-items: center;
     justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5em;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#play-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 2em;
+}
+button:hover {
+    background-color:#6ac96d;
+}
+@media all and (max-width:30em){
+    button{
+        display:block;
+        margin:0.2em auto;
+    }
+}
+
+#scores {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    align-items: center;
+    justify-content: space-around;
 }
