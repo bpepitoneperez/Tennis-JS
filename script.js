@@ -1,6 +1,7 @@
 let playPressed = false;
 let quitPressed = false;
 let playSounds = true;
+let twoPlayer = false;
 
 let racketHit = new Audio('racket-sound.mp3');
 let wallHit = new Audio('wall-sound.mp3');
@@ -61,6 +62,15 @@ function createCanvas() {
 }
 
 function game() {
+    if (!twoPlayer) {
+        let midPaddle = paddle2Y + (paddleHeight / 2);
+        if (ballY > midPaddle) {
+            paddle2Velocity = speed;
+        }
+        else if (ballY < midPaddle) {
+            paddle2Velocity = -speed;
+        }
+    }
     if (playPressed) {
         ballX += ballXVelocity;
         ballY += ballYVelocity;
@@ -178,10 +188,14 @@ function keyDown (e) {
             paddle1Velocity = speed;
             break;
         case 38:
-            paddle2Velocity = -speed;
+            if (twoPlayer) {
+                paddle2Velocity = -speed;
+            }
             break;
         case 40:
-            paddle2Velocity = speed;
+            if (twoPlayer) {
+                paddle2Velocity = speed;
+            }
             break;
     }
 }
@@ -195,10 +209,14 @@ function keyUp(e) {
             paddle1Velocity = 0;
             break;
         case 38:
-            paddle2Velocity = 0;
+            if (twoPlayer) {
+                paddle2Velocity = 0;
+            }
             break;
         case 40:
-            paddle2Velocity = 0;
+            if (twoPlayer) {
+                paddle2Velocity = 0;
+            }
             break;
     }
 }
