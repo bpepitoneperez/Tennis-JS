@@ -36,6 +36,7 @@ quitButton.addEventListener('click', function() {
 const score1 = document.getElementById('score1');
 const score2 = document.getElementById('score2');
 const speed = 7;
+const cpuSpeed = 5;
 let paddleWidth = 40;
 let paddleHeight = 160;
 let paddle1Y=paddle2Y= (canvas.height / 2) - (paddleHeight / 2);
@@ -64,11 +65,14 @@ function createCanvas() {
 function game() {
     if (!twoPlayer) {
         let midPaddle = paddle2Y + (paddleHeight / 2);
-        if (ballY > midPaddle) {
-            paddle2Velocity = speed;
+        if (ballY > midPaddle + 2) {
+            paddle2Velocity = cpuSpeed;
         }
-        else if (ballY < midPaddle) {
-            paddle2Velocity = -speed;
+        else if (ballY < midPaddle - 2) {
+            paddle2Velocity = -cpuSpeed;
+        }
+        else {
+            paddle2Velocity = 0;
         }
     }
     if (playPressed) {
