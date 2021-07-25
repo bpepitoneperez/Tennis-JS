@@ -78,14 +78,16 @@ function game() {
         paddle2Y += paddle2Velocity;
     }
     
-    if (ballY < 0 || ballY > canvas.height) {
+    if (ballY < 0 || ballY > canvas.height - 10) {
         ballYVelocity = -ballYVelocity;
         if (playSounds) {
+            wallHit.currentTime= 0;
             wallHit.play();
         }
     }
     if (ballX < 0 + paddleWidth && ballY > paddle1Y && ballY < paddle1Y + paddleHeight) {
         if (playSounds) {
+            racketHit.currentTime= 0;
             racketHit.play();
         }
         ballXVelocity -= 1;
@@ -96,6 +98,7 @@ function game() {
     }
     if (ballX > canvas.width - 55 && ballY > paddle2Y && ballY < paddle2Y + paddleHeight) {
         if (playSounds) {
+            racketHit.currentTime= 0;
             racketHit.play();
         }
         ballXVelocity += 1;
@@ -106,18 +109,21 @@ function game() {
     }
     if (ballX < 0 + paddleWidth && ballY == paddle1Y || ballY == paddle1Y + paddleHeight) {
         if (playSounds) {
+            racketHit.currentTime= 0;
             racketHit.play();
         }
         ballYVelocity = -ballYVelocity;
     }
     if (ballX > canvas.width - 55 && ballY == paddle2Y || ballY == paddle2Y + paddleHeight) {
         if (playSounds) {
+            racketHit.currentTime= 0;
             racketHit.play();
         }
         ballYVelocity = -ballYVelocity;
     }
     if (ballX < 0) {
         if (playSounds) {
+            goal.currentTime= 0;
             goal.play();
         }
         player2Count++;
