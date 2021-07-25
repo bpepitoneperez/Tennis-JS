@@ -169,8 +169,8 @@ function game() {
 }
 
 function newRound() {
-    score1.textContent = ("Player 1: " + player1Count);
-    score2.textContent = ("Player 2: " + player2Count);
+    score1.textContent = ("Player: " + player1Count);
+    score2.textContent = ("CPU: " + player2Count);
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
     ballYVelocity = Math.random() * (3 - (-3)) - 3;
@@ -184,8 +184,8 @@ function reset() {
     ballY = canvas.height / 2;
     player1Count = 0;
     player2Count = 0;
-    score1.textContent = ("Player 1: " + player1Count);
-    score2.textContent = ("Player 2: " + player2Count);
+    score1.textContent = ("Player: " + player1Count);
+    score2.textContent = ("CPU: " + player2Count);
 }
 
 
