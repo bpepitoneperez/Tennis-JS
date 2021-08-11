@@ -198,14 +198,10 @@ function keyDown (e) {
             paddle1Velocity = speed;
             break;
         case 38:
-            if (twoPlayer) {
-                paddle2Velocity = -speed;
-            }
+            paddle1Velocity = -speed;
             break;
         case 40:
-            if (twoPlayer) {
-                paddle2Velocity = speed;
-            }
+            paddle1Velocity = speed;
             break;
     }
 }
@@ -219,14 +215,10 @@ function keyUp(e) {
             paddle1Velocity = 0;
             break;
         case 38:
-            if (twoPlayer) {
-                paddle2Velocity = 0;
-            }
+            paddle1Velocity = 0;
             break;
         case 40:
-            if (twoPlayer) {
-                paddle2Velocity = 0;
-            }
+            paddle1Velocity = 0;
             break;
     }
 }
